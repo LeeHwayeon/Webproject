@@ -1,0 +1,66 @@
+.form-group
+  label(for="title") Title
+  input.form-control(type="text", name="title", placeholder="What's your event?", value=event.title)
+.form-group
+  label(for="location") Location
+  input.form-control(type="text", name="location", placeholder="Where's the place?", value=event.location)  
+//- 날짜수정, 티켓값 입력 수정
+.form-row
+  .form-group-col-md-5
+    label(for="when") Starts
+    #frm(action="action.jsp")
+      input.from-control(type="date" id="userdate" name="sdate" value=event.stdate)
+      input(type="time" name="time" value=event.time)
+  .form-group-col-md-5
+    label(for="when") Ends
+    #frm(action="action.jsp")
+      input.from-control(type="date" id="userdate" name="endate" value=event.endate)
+      input(type="time" name="time" value=event.time)
+br
+.form-group
+  label(for="event") Event Description
+  textarea.form-control(name="content", rows="5")= event.content
+.form-row
+  .form-group-col-md-2
+    label(for="organization") Organization Name
+    input.form-control(type="text" name="organization" value=event.organization)
+  .form-group-col-md-6
+    label(for="organization") Organization Description
+    input.form-control(rows="5", name="orcontent" value=event.orcontent)
+br
+.form-group
+//- 티켓 값 받는거 구성 하기  
+.from-group
+  label(for="inputState") Event Type
+  select(id="inputState", class="form-control" name="type" value=event.type)
+    option Choose
+    option Appearance or Signing
+    option Attraction
+    option Camp,Trip, or Retreat
+    option Class, Training, or Workshop
+    option Concert or Performance
+    option Conference
+    option Convention
+    option Dinner or Gala
+    option Festival or Fair
+    option Game or Competition
+    option Meeting or Networking Event
+    option Other
+    option Tour
+br
+.form-group
+  label(for=topic) Event Topic
+   select(id="inputState", class="form-control" name="topic" value=event.topic)
+    option Business & Professional
+    option Charity & Causes
+    option Community & Culture
+    option Family & Education
+    option Fashion & Beauty
+    option Film, Media & Entertainment
+    option Food & Drink
+    option Government & Politics
+    option Health & Wellness
+    option Hobbies & Special Interest
+    option Home & Lifestyle
+    option Music
+    option Other

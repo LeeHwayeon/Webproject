@@ -1,0 +1,20 @@
+.register.card
+  .numbers.like-badge
+    .number
+      span.number.num-votes= event.numLikes
+    .button
+      a.like(href='#', data-id=register.id)
+        i.fa.fa-thumbs-up
+        | 
+        | Like
+
+  .card-body
+    .content= register.content
+  .row.card-body
+    .col-sm
+    .col-sm.text-right
+      .author
+        | registered on #{moment(register.createdAt).format('YYYY-MM-DD')}
+        if register.author
+          | 
+          | by #[a(href=`/users/${register.author.id}`)= register.author.name]
