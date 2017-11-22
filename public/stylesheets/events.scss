@@ -12,13 +12,29 @@
     font-size: 1.3rem;
   }
   .content {
-    color: #aaa;
+    color: rgb(0, 0, 0);
   }
-  .location {
-    margin: 0.5em 0;
-  }
-  .sdate,.endate{
+  .location,.sdate,.endate,.time,.organization,.orcontent{
+    margin: 0.3em 0;    
     color : #0f5ca6;
+  }
+  h6{
+    margin: 7px 0 0 0;
+  }
+  ul{
+    list-style: none;
+    margin-bottom: 5px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+  }
+  ul>li>h6:before{
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 5px 6px 0px;
+  }
+  .type,.topic {
+    color: rgb(241, 62, 241);
   }
 
 

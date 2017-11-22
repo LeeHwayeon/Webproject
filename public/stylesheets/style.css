@@ -34,12 +34,10 @@ a:hover {
   font-size: 2.5rem;
   margin: 1em 0 0.5em 0;
   border-bottom: 1px solid #eee;
-  }
+  color: #011a72; }
 
 .header > .navbar {
-  background-color: #f6682f !important;
-  border-bottom: 1px solid #D2D6DF;
-}
+  background-color: #011a72 !important; }
 
 .search-input-group {
   margin: 1em 0;
@@ -91,11 +89,24 @@ a:hover {
   .event .title {
     font-size: 1.3rem; }
   .event .content {
-    color: #aaa; }
-  .event .location {
-    margin: 0.5em 0; }
-  .event .sdate, .event .endate {
+    color: black; }
+  .event .location, .event .sdate, .event .endate, .event .time, .event .organization, .event .orcontent {
+    margin: 0.3em 0;
     color: #0f5ca6; }
+  .event h6 {
+    margin: 7px 0 0 0; }
+  .event ul {
+    list-style: none;
+    margin-bottom: 5px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef; }
+  .event ul > li > h6:before {
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 5px 6px 0px; }
+  .event .type, .event .topic {
+    color: #f13ef1; }
 
 .author {
   text-align: right;

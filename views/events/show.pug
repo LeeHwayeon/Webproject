@@ -5,19 +5,32 @@ block content
     h1.main-title= event.title
 
     .event.show
-      .content= event.content
+      b.content= event.content
 
-      .location= event.location
-      h8 date & time
-      .userdate=event.sdate       
-      .userdate=event.endate
-      .time=event.time
-      h8 organization : 
-      .organization=event.organization
-      .orcontent=event.orcontent
-
-      .type=event.type
-      .topic=event.topic
+      br
+      ul
+        li
+          h6 Location
+          b.location= event.location
+        li
+          h6 Start Date
+          b.sdate=event.sdate 
+        li
+          h6 End Date
+          b.endate=event.endate
+        li
+          h6 Time
+          b.time=event.time
+        li
+          h6 Organization :
+          b.organization=event.organization
+          b.orcontent=event.orcontent
+        li
+          h6 Event Type
+          b.type=event.type
+        li
+          h6 Event Topic
+          b.topic=event.topic
 
       include _event
 
