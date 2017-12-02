@@ -34,10 +34,10 @@ a:hover {
   font-size: 2.5rem;
   margin: 1em 0 0.5em 0;
   border-bottom: 1px solid #eee;
-  color: #011a72; }
+  color: black; }
 
 .header > .navbar {
-  background-color: #011a72 !important; }
+  background-color: #000000 !important; }
 
 .search-input-group {
   margin: 1em 0;
@@ -90,7 +90,7 @@ a:hover {
     font-size: 1.3rem; }
   .event .content {
     color: black; }
-  .event .location, .event .sdate, .event .endate, .event .time, .event .organization, .event .orcontent {
+  .event .location, .event .stdate, .event .endate, .event .sttime, .event .endtime, .event .organization, .event .paidticket, .event .price, .event .freeticket, .event .orcontent {
     margin: 0.3em 0;
     color: #0f5ca6; }
   .event h6 {

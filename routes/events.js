@@ -27,9 +27,14 @@ router.get('/', catchErrors(async (req, res, next) => {
       {title: {'$regex': term, '$options': 'i'}},
       {content: {'$regex': term, '$options': 'i'}},
       {location: {'$regex': term, '$options': 'i'}},
-      {sdate: {'$regex': term, '$options': 'i'}},
+      {stdate: {'$regex': term, '$options': 'i'}},
       {endate: {'$regex': term, '$options': 'i'}},
-      {time: {'$regex': term, '$options': 'i'}},
+      {image: {'$regex': term, '$options': 'i'}},
+      {sttime: {'$regex': term, '$options': 'i'}},
+      {endtime: {'$regex': term, '$options': 'i'}},
+      {freeticket: {'$regex': term, '$options': 'i'}},
+      {paidticket: {'$regex': term, '$options': 'i'}},
+      {price: {'$regex': term, '$options': 'i'}},      
       {organization: {'$regex': term, '$options': 'i'}},
       {orcontent: {'$regex': term, '$options': 'i'}},
       {type: {'$regex': term, '$options': 'i'}},
@@ -72,9 +77,14 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   event.title = req.body.title;
   event.content = req.body.content;
   event.location = req.body.location;
-  event.sdate=req.body.sdate;
+  event.stdate=req.body.stdate;
   event.endate=req.body.endate;
-  event.time=req.body.time;
+  event.sttime=req.body.sttime;
+  event.endtime=req.body.endtime;  
+  event.paidticket=req.body.paidticket;
+  event.freeticket=req.body.freeticket;
+  event.price=req.body.price;
+  event.image=req.body.price;
   event.organization=req.body.organization;
   event.orcontent=req.body.orcontent;
   event.type=req.body.type;
@@ -98,9 +108,14 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     author: user._id,
     content: req.body.content,
     location: req.body.location,
-    sdate:req.body.sdate,
+    stdate:req.body.stdate,
     endate:req.body.endate,
-    time:req.body.time,
+    sttime:req.body.sttime,
+    endtime:req.body.endtime,
+    freeticket:req.body.freeticket,
+    paidticket:req.body.paidticket,
+    price:req.body.price,
+    image:req.body.image,
     organization:req.body.organization,
     orcontent:req.body.orcontent,
     type:req.body.type,

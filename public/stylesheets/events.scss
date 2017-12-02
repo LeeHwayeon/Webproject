@@ -14,7 +14,7 @@
   .content {
     color: rgb(0, 0, 0);
   }
-  .location,.sdate,.endate,.time,.organization,.orcontent{
+  .location,.stdate,.endate,.sttime,.endtime,.organization,.paidticket,.price,.freeticket,.orcontent{
     margin: 0.3em 0;    
     color : #0f5ca6;
   }
@@ -34,9 +34,9 @@
     padding: 0px 5px 6px 0px;
   }
   .type,.topic {
-    color: rgb(241, 62, 241);
+    color: 
+    rgb(241, 62, 241);
   }
-
 
 }
 .author {

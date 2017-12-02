@@ -6,24 +6,39 @@ block content
 
     .event.show
       b.content= event.content
+      br
+      b.image=event.image
 
+      br
       br
       ul
         li
           h6 Location
           b.location= event.location
         li
-          h6 Start Date
-          b.sdate=event.sdate 
+          h6 Start Event
+          | date : 
+          b.stdate=event.stdate 
+          br
+          | time : 
+          b.sttime=event.sttime
         li
-          h6 End Date
+          h6 End Event
+          | date : 
           b.endate=event.endate
+          br
+          | time : 
+          b.endtime=event.endtime
         li
-          h6 Time
-          b.time=event.time
+          h6 Tickets
+          b.freeticket=event.freeticket
+          b.paidticket=event.paidticket 
+          h6 Ticket Price
+          b.price=event.price
         li
-          h6 Organization :
+          h6 Organization 
           b.organization=event.organization
+          br
           b.orcontent=event.orcontent
         li
           h6 Event Type
@@ -31,7 +46,7 @@ block content
         li
           h6 Event Topic
           b.topic=event.topic
-
+      br
       include _event
 
       .buttons

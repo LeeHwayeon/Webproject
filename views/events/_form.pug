@@ -4,21 +4,39 @@
 .form-group
   label(for="location") Location
   input.form-control(type="text", name="location", placeholder="Where's the place?", value=event.location)  
-//- 날짜수정, 티켓값 입력 수정
 .form-row
   .form-group-col-md-5
     label(for="when") Starts
-    #frm(action="action.jsp")
-      input.from-control(type="date" id="userdate" name="sdate" value=event.stdate)
-      input(type="time" name="time" value=event.time)
+    br
+    input.form-control(type="date" id="userdate" name="stdate" value=event.stdate)
+    br
+    | Start Time
+    br
+    input(type="time" name="sttime" value=event.sttime)
   .form-group-col-md-5
     label(for="when") Ends
-    #frm(action="action.jsp")
-      input.from-control(type="date" id="userdate" name="endate" value=event.endate)
-      input(type="time" name="time" value=event.time)
+    br
+    input.form-control(type="date" id="userdate" name="endate" value=event.endate)
+    br
+    | End Time
+    br
+    input(type="time" name="endtime" value=event.endtime)
+br
+.form-group
+    input(type='checkbox' name='freeticket' value=event.freeticket) 
+    | Free ticket
+    input(type='checkbox' name='paidticket' value=event.paidticket) 
+    | Paid ticket
+    p
+    | Ticket Price (paid ticket인 경우 입력)
+    input(type="number" name="price" value=event.price)
 .form-group
   label(for="event") Event Description
   textarea.form-control(name="content", rows="5")= event.content
+.form-group(action="/action_page.php")
+  label(for="file") 
+  | Event Image
+  input(type="file" name="image" multiple value=event.image)
 .form-row
   .form-group-col-md-2
     label(for="organization") Organization Name
