@@ -51,11 +51,13 @@ router.get('/', catchErrors(async (req, res, next) => {
 
 router.get('/new', needAuth, (req, res, next) => {
   res.render('events/new', {event: {}});
+
 });
 
 router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
   const event = await Event.findById(req.params.id);
   res.render('events/edit', {event: event});
+
 }));
 
 router.get('/:id', catchErrors(async (req, res, next) => {
@@ -65,6 +67,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
 
   await event.save();
   res.render('events/show', {event: event, registers: registers});
+
 }));
 
 router.put('/:id', catchErrors(async (req, res, next) => {

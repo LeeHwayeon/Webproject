@@ -23,9 +23,9 @@
     input(type="time" name="endtime" value=event.endtime)
 br
 .form-group
-    input(type='checkbox' name='freeticket' value=event.freeticket) 
+    input(type='radio' name='ticket' value=event.freeticket) 
     | Free ticket
-    input(type='checkbox' name='paidticket' value=event.paidticket) 
+    input(type='radio' name='ticket' value=event.paidticket) 
     | Paid ticket
     p
     | Ticket Price (paid ticket인 경우 입력)
@@ -33,10 +33,37 @@ br
 .form-group
   label(for="event") Event Description
   textarea.form-control(name="content", rows="5")= event.content
-.form-group(action="/action_page.php")
-  label(for="file") 
-  | Event Image
-  input(type="file" name="image" multiple value=event.image)
+.form-group
+  label(for="img") Image
+  input#file.form-control(type="file")
+  input#url.form-control(type="text",readonly="readonly",name="img",value="")
+  img#preview.img-fluid(src="https://dummyimage.com/200x200/ccc/fff")
+script.
+  $(function(){
+    $("#preview").hide();
+    $("#file").change(function(){
+      var file = $("file")[0].files[0];
+      if(file){
+        var url="/s3?filename="+encodeURIComponent(file.name)+"&type="+encodeURIComponent(file.type);
+        console.log(url);
+        $.getJSON(url,function(resp){
+          console.log(resp.signedRequest);
+          $.ajax({
+            url:resp.signedRequest,
+            method:'PUT',
+            data:file,
+            headers:{'x-amz-acl':'public-read','Content-Type':file.type},
+            processData: false,
+            contentType: file.type,
+            sucess:function(){
+              $("#preview").attr("src",resp.url).show();
+              $("url").val(resp.url);
+            }
+          });
+        });
+      }
+    });
+  });
 .form-row
   .form-group-col-md-2
     label(for="organization") Organization Name

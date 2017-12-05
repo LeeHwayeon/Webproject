@@ -5,12 +5,10 @@ block content
     h1.main-title= event.title
 
     .event.show
+      if event.img
+        img.img-fluid(src= event.img)
       b.content= event.content
-      br
-      b.image=event.image
 
-      br
-      br
       ul
         li
           h6 Location
@@ -66,7 +64,10 @@ block content
 
     form(action=`/events/${event.id}/registers`, method='POST')
       .form-group
-        label(for='answer') Affiliation and Reason for participation
-        textarea.form-control(name="content", rows="5")
+        label(for='register') Affiliation
+        textarea.form-control(name="content", rows="1")
+        | Reason for participation
+        textarea.form-control(name="content", rows="5")        
+        
       button.btn.btn-primary(type="submit") Register
 
