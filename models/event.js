@@ -14,7 +14,6 @@ var schema = new Schema({
   paidticket:{type:String,trim: true},
   freeticket:{type:String,trim: true},
   price:{type:String,trim: true},  
-  img:{type:String},  
   organization:{type:String, trim:true},
   orcontent:{type:String, trim:true},
   type:{type:String, trim:true},
