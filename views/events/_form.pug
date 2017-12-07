@@ -25,7 +25,7 @@ br
 .form-group
     input(type='radio' name='ticket' value=event.freeticket) 
     | Free ticket
-    input(type='radio' name='ticket' value=event.paidticket) 
+    input(type='radio' name='ticket'  value=event.paidticket) 
     | Paid ticket
     p
     | Ticket Price (paid ticket인 경우 입력)
@@ -33,16 +33,17 @@ br
 .form-group
   label(for="event") Event Description
   textarea.form-control(name="content", rows="5")= event.content
-.form-row
-  .form-group-col-md-2
-    label(for="organization") Organization Name
-    input.form-control(type="text" name="organization" value=event.organization)
-  .form-group-col-md-6
-    label(for="organization") Organization Description
-    input.form-control(rows="5", name="orcontent" value=event.orcontent)
-br
 .form-group
-//- 티켓 값 받는거 구성 하기  
+  label(for="organization") Organization Name
+  input.form-control(type="text" name="organization" value=event.organization)
+.form-group
+  label(for="organization") Organization Description
+  textarea.form-control(name="orcontent", rows="5")= event.orcontent
+//- .form-group
+//-   select(id="type" name='eventType')
+//-   script.
+//-     for name in eventType
+//-       option(value=name, check=(name==Event.eventType))= name
 .from-group
   label(for="inputState") Event Type
   select(id="inputState", class="form-control" name="type" value=event.type)

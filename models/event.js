@@ -28,5 +28,5 @@ var schema = new Schema({
 });
 schema.plugin(mongoosePaginate);
 var Event = mongoose.model('Event', schema);
-
+// schema.statics.eventType = [ "1", "2" ];
 module.exports = Event;
