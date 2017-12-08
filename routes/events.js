@@ -74,7 +74,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
 }));
 
 router.put('/:id', catchErrors(async (req, res, next) => {
-  const event = await event.findById(req.params.id);
+  const event = await Event.findById(req.params.id);
 
   if (!event) {
     req.flash('danger', 'Not exist event');
