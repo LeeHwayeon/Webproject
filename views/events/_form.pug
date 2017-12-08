@@ -12,7 +12,7 @@
     br
     | Start Time
     br
-    input(type="time" name="sttime" value=event.sttime)
+    input.form-control(type="time" name="sttime" value=event.sttime)
   .form-group-col-md-5
     label(for="when") Ends
     br
@@ -20,16 +20,12 @@
     br
     | End Time
     br
-    input(type="time" name="endtime" value=event.endtime)
+    input.form-control(type="time" name="endtime" value=event.endtime)
 br
 .form-group
-    input(type='radio' name='ticket' value=event.freeticket) 
-    | Free ticket
-    input(type='radio' name='ticket'  value=event.paidticket) 
-    | Paid ticket
-    p
-    | Ticket Price (paid ticket인 경우 입력)
-    input(type="number" name="price" value=event.price)
+  | Ticket Price (* Enter 0 yen for free ticket)
+  br
+  input.form-control(type="number" name="price" value=event.price) 
 .form-group
   label(for="event") Event Description
   textarea.form-control(name="content", rows="5")= event.content

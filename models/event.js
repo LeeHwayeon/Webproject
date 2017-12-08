@@ -11,8 +11,6 @@ var schema = new Schema({
   endate:{type:String, trim: true},
   sttime:{type:String},
   endtime:{type:String},
-  paidticket:{type:String,trim: true},
-  freeticket:{type:String,trim: true},
   price:{type:String,trim: true},  
   organization:{type:String, trim:true},
   orcontent:{type:String, trim:true},

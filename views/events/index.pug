@@ -6,7 +6,7 @@ block content
   .container
     form.form-inline.search-input-group(action='/events', method='GET')
       i.fa.fa-search
-      input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
+      input.form-control.mr-sm-2(type='text', name='term', placeholder='Search Events', aria-label='Search', value=term)
 
     h1.main-title 
       | Events
@@ -25,4 +25,4 @@ block content
       +paginate(events, '/events', {query: "???XXX&&"})
 
     hr
-    a.btn.btn-primary(href='/events/new') Add Event
+    a.btn.btn-primary(href='/events/new') Create Event
