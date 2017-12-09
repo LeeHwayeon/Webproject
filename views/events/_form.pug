@@ -6,21 +6,21 @@
   input.form-control(type="text", name="location", placeholder="Where's the place?", value=event.location)  
 .form-row
   .form-group-col-md-5
-    label(for="when") Starts
+    label(for="when") Start Date
     br
-    input.form-control(type="date" id="userdate" name="stdate" value=event.stdate)
+    input.form-control(type="date" id="userdate" placeholder="2017-12-09" name="stdate" value=event.stdate)
     br
     | Start Time
     br
-    input.form-control(type="time" name="sttime" value=event.sttime)
+    input.form-control(type="time" placeholer="오전 10:00" name="sttime"  value=event.sttime)
   .form-group-col-md-5
-    label(for="when") Ends
+    label(for="when") End Date
     br
-    input.form-control(type="date" id="userdate" name="endate" value=event.endate)
+    input.form-control(type="date" id="userdate" placeholder="2017-12-09" name="endate" value=event.endate)
     br
     | End Time
     br
-    input.form-control(type="time" name="endtime" value=event.endtime)
+    input.form-control(type="time" placeholer="오전 10:00" name="endtime"  value=event.endtime)
 br
 .form-group
   | Ticket Price (* Enter 0 yen for free ticket)
